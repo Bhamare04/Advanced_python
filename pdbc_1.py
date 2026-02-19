@@ -12,7 +12,7 @@ conn = mysql.connector.connect(
 print("Database connected successfully!")
 
 
-import pymsql
+import pymysql
 
 conn1=pymysql.connect(
     user='root',
