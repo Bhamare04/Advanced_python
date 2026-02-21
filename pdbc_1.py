@@ -47,3 +47,4 @@ data =[
 cu.executemany(insertdata,data)
 conn1.commit()
 #print("data inserted successfully")
+
