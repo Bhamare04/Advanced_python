@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Calculator</title>
+
+    <style>
+        body { font-family: Arial; text-align: center; }
+
+        .box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input[type=number] {
+            width: 90%;
+            height: 35px;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            width: 120px;
+            height: 45px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 15px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Django Calculator</h2>
+
+<div class="box">
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="number" name="num1" placeholder="Number 1"
+           value="{{num1}}" required>
+
+    <input type="number" name="num2" placeholder="Number 2"
+           value="{{num2}}" required>
+
+    <br>
+
+    <button type="submit" name="op" value="add">Add</button>
+    <button type="submit" name="op" value="sub">Subtract</button><br>
+
+    <button type="submit" name="op" value="mul">Multiply</button>
+    <button type="submit" name="op" value="div">Divide</button>
+
+</form>
+
+<div class="result">
+    Result: {{ result }}
+</div>
+
+</div>
+
+</body>
+</html>
